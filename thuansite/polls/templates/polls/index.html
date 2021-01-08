@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>This is templates</h1>
-    <p>My name is Thuan</p>
-</body>
-</html>
+{% extends 'polls/base.html' %}
+{% block content %}
+<h1>This is templates</h1>
+<p>My name is <b>{{ name }}</b></p>
+<h2>My goods: </h2>
+<ul>
+    {% for item in goods %}
+        {% if item != "money" %}
+            <li>{{ item }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}
