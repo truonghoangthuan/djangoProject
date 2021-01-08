@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+    {% if questList %}
+        {% for item in questList %}
+            {{ item.question_text }}
+        {% endfor %}
+    {% else %}
+        <h3 style="color: blue;">Empty!!!</h3>
+    {% endif %}
+{% endblock %}
