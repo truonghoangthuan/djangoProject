@@ -1,8 +1,0 @@
-{% extends 'polls/base.html' %}
-{% block content %}
-    {% if qs %}
-        {% for item in qs.choice_set.all %}
-            <p>{{ item.choice_text }}</p>
-        {% endfor %}
-    {% endif %}
-{% endblock %}
