@@ -23,5 +23,6 @@ from courses import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home_view),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', views.home_view, name='home'),
+    path('about/', views.about_view, name='about'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
