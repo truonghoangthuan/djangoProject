@@ -37,13 +37,14 @@
 </nav>
 <div class="container video-list">
     <h1 class="my-3 mx-auto" style="width: 200px;"><b>Django</b></h1>
-    {% for i in 'abcde' %}
+    {% for item in object_list %}
     <div class="media mt-1">
-        <a href=""><img src="https://placeimg.com/640/480/any" class="mr-3" alt="..." width="320"></a>
+        <a href=""><img src="{{ item.pictures.url }}" class="mr-3" alt="..." width="320"></a>
         <div class="media-body">
-            <h5 class="mt-0"><a href="">Khóa học Django của tôi</a></h5>
-            <div>Teacher: <a href="">Nguyen Van A</a></div>
-            {% lorem 1 p random %}
+            <h5 class="mt-0"><a href=""> {{ item.name }}</a></h5>
+            <div>Teacher: <a href=""> {{ item.teacher }}</a></div>
+            <div>Num lessons: {{ item.num_lessons }}</div>
+            {{ item.excerpt }}
         </div>
     </div>
     {% endfor %}

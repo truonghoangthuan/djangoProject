@@ -1,3 +1,10 @@
+# Create your views here.
+from courses.models import Courses
 from django.shortcuts import render
 
-# Create your views here.
+
+def home_view(request):
+    object_list = Courses.objects.filter()
+    return render(request, 'home.html', {
+        'object_list': object_list
+    })
