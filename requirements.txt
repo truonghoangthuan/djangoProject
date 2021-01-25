@@ -1,3 +1,0 @@
-Django
-Psycopg2
-Pillow
